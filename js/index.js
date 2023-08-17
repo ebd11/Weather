@@ -46,7 +46,7 @@ convertDegrees.addEventListener('click', () => {
 
  async function getCurrentWeather() {
     try {
-        const weather = await fetch(`http://api.weatherapi.com/v1/current.json?key=76630cc086f34dada4b25617231408&q=${cityOrZip}`, {mode: 'cors'})
+        const weather = await fetch(`https://api.weatherapi.com/v1/current.json?key=76630cc086f34dada4b25617231408&q=${cityOrZip || 'auto:ip'}`, {mode: 'cors'})
 
         const weatherData = await weather.json()
 
@@ -76,7 +76,7 @@ convertDegrees.addEventListener('click', () => {
 }
 
 async function getDayForecast() {
-    const forecast = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=76630cc086f34dada4b25617231408&q=${cityOrZip}`, {mode: 'cors'})
+    const forecast = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=76630cc086f34dada4b25617231408&q=${cityOrZip || 'auto:ip'}`, {mode: 'cors'})
 
     const forecastData = await forecast.json()
 
