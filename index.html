@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <script src="./js/index.js" defer></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <header>
+      <!-- Heading -->
+      <h1>Weather</h1>
+      <!-- Search -->
+      <div class="search">
+        <label for="entry"></label>
+        <input
+          id="entry"
+          type="text"
+          placeholder="Enter your city or zip code"
+          max="24"
+        />
+        <button id="submit-entry" type="button">
+          <span class="material-symbols-outlined">search</span>
+        </button>
+      </div>
+      <button id="convert">Convert from &deg;F to &deg;C</button>
+    </header>
+    <main>
+      <div class="today-container">
+        <div class="main-info">
+          <div class="area">
+            <span class="location"></span>
+            <span class="country"></span>
+          </div>
+          <div class="weather-visuals">
+            <div class="cond-img">
+              <span class="conditions"></span>
+              <div class="icon-div">
+                <img class="conditions-icon" src="#" alt="weather conditions">
+              </div>
+            </div>
+            <span class="degrees"></span>
+          </div>
+          <span class="last-update"></span>
+        </div>
+        <div class="additional-info">
+          <span class="time add-details"><b>Current time:</b><span class="current-time"></span></span>
+          <span class="add-details"><b>Feels like:</b><span class="feels-like"></span></span>
+          <span class="add-details"><b>Humidity:</b><span class="humidity"></span></span>
+          <span class="add-details"><b>Wind:</b><span class="wind-dir-mph"></span></span>
+          <span class="add-details"><b>Wind Gust:</b><span class="wind-gust-mph"></span></span>
+        </div>
+      </div>
+      <h2 class="daycast-header">Today's forecast</h2>
+      <div class="daycast-container">
+        <div class="hour 00">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 01">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 02">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 03">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 04">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 05">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 06">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 07">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 08">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 09">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 10">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 11">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 12">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 13">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 14">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 15">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 16">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 17">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 18">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 19">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 20">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 21">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 22">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+        <div class="hour 23">
+          <div class="cond-and-time">
+            <span class="time-condition"></span>
+            <span class="day-hour"></span>
+          </div>
+          <div class="time-deg-icon">
+            <span class="time-degrees"></span>
+            <span class="time-icon">
+              <img class="day-cond-img" src="#" alt="">
+            </span>
+          </div>
+          <span class="time-humidity"></span>
+          <span class="time-wind"></span>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>Powered by <a href="https://www.weatherapi.com/" title="Free Weather API" target="_blank">WeatherAPI.com</a></p>
+      <p>Page developed by <a href="https://github.com/ebd11" target="_blank">https://github.com/ebd11</a></p>
+    </footer>
+  </body>
+</html>

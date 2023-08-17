@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+    background-color: #bbb;
+    color: #000;
+    position: relative;
+
+  --border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+input, button {
+  font-family: "Open Sans", system-ui, -apple-system, BlinkMacSystemFont,
+  "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+  sans-serif;
+}
+
+header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.search {
+  display: flex;
+  height: 30px;
+}
+
+#entry {
+  outline: none;
+  padding: 4px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+}
+
+#submit-entry {
+  border: none;
+  display: flex;
+  align-items: center;
+  border-radius: 0 4px 4px 0;
+}
+
+#submit-entry, #convert {
+  transition: all 400ms ease;
+}
+
+#submit-entry:hover,
+#convert:hover {
+  cursor: pointer;
+  transition: all 400ms ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+#convert {
+  border: none;
+  border-radius: 4px;
+  height: 30px;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+
+.today-container, .daycast-container {
+  border-radius: 4px;
+  max-width: 900px;
+  border: var(--border);
+  margin: 50px auto 0 auto;
+}
+
+.today-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 20px;
+  font-size: 1.2rem;
+}
+
+.main-info {
+  font-weight: bold;
+}
+
+.area {
+  border-bottom: var(--border);
+}
+
+.country {
+  display: block;
+}
+
+.weather-visuals {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+  border-bottom: var(--border);
+}
+
+.cond-img {
+  display: flex;
+  flex-direction: column;
+  border: var(--border);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.conditions {
+  text-align: center;
+}
+
+.icon-div {
+  display: flex;
+  justify-content: center;
+}
+
+.degrees {
+  font-size: 5.5rem;
+}
+
+.last-update, .country, .degrees {
+  font-weight: normal;
+}
+
+.additional-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.add-details {
+  border-bottom: var(--border);
+  padding-bottom: 10px;
+}
+
+
+.daycast-container {
+  overflow: auto;
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+  margin: 10px auto 100px auto;
+  position: relative;
+}
+
+.daycast-header {
+  max-width: 900px;
+  margin: 50px auto 0 auto;
+}
+
+.hour {
+  min-width: 300px;
+  height: 300px;
+  border: var(--border);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  padding: 1rem;
+  gap: 35px;
+}
+
+
+.hour .cond-and-time {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.time-condition {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.time-deg-icon {
+  display: flex;
+  align-items: center;
+  height: 70px;
+  gap: 10px;
+}
+
+.time-humidity, .time-wind {
+  height: 26px;
+}
+
+.hour .time-degrees {
+  font-size: 2.5rem;
+}
+
+footer {
+  border-top: var(--border);
+  text-align: center;
+  padding: 1rem;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media screen and (max-width: 960px) {
+  .today-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .degrees {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .degrees {
+    font-size: 3rem;
+  }
+
+  .daycast-header {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .country, .conditions, .last-update, .additional-info,
+  .day-hour, .time-humidity, .time-wind, footer {
+    font-size: 1rem;
+  }
+
+  header {
+    margin-bottom: 50px;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  .today-container, .daycast-container {
+    margin: 0 8px;
+  }
+
+  .daycast-container {
+    margin-bottom: 100px;
+  }
+
+  .hour {
+    min-width: 225px;
+  }
+
+  .cond-and-time {
+    flex-direction: column;
+  }
+
+  .time-condition {
+    font-size: 1rem;
+  }
+
+  .daycast-header {
+    margin: 2rem 0 0.5rem;
+  }
+}
