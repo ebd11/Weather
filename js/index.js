@@ -25,7 +25,7 @@ const dayConditionImgs = document.querySelectorAll('.day-cond-img')
 const hourHumidity = document.querySelectorAll('.time-humidity')
 const hourWinds = document.querySelectorAll('.time-wind')
 
-let cityOrZip
+let cityOrZip = 90011
 let fahrenheitToCelsius = false
 
 getCurrentWeather()
@@ -46,7 +46,7 @@ convertDegrees.addEventListener('click', () => {
 
  async function getCurrentWeather() {
     try {
-        const weather = await fetch(`http://api.weatherapi.com/v1/current.json?key=76630cc086f34dada4b25617231408&q=${cityOrZip || 'auto:ip'}`)
+        const weather = await fetch(`http://api.weatherapi.com/v1/current.json?key=76630cc086f34dada4b25617231408&q=${cityOrZip}`, {mode: 'cors'})
 
         const weatherData = await weather.json()
 
@@ -70,14 +70,13 @@ convertDegrees.addEventListener('click', () => {
 
         getDayForecast()
     } catch(err) {
-        alert('Current weather: Could not find this city or zip code.')
+        alert('Could not find this city or zip code.')
         throw new Error(err)
     }
 }
 
 async function getDayForecast() {
- try {
-    const forecast = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=76630cc086f34dada4b25617231408&q=${cityOrZip || 'auto:ip'}`)
+    const forecast = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=76630cc086f34dada4b25617231408&q=${cityOrZip}`, {mode: 'cors'})
 
     const forecastData = await forecast.json()
 
@@ -119,11 +118,6 @@ async function getDayForecast() {
     hourWinds.forEach((wind, i) => {
         wind.textContent = `Wind: ${windArr[i]}`
     })
- } catch(err) {
-     alert('Day forecast: Could not find this city or zip code.')
-    throw new Error(err)
- }
-
 }
 
 function submissionHandler(e) {
