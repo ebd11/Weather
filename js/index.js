@@ -25,7 +25,7 @@ const dayConditionImgs = document.querySelectorAll('.day-cond-img')
 const hourHumidity = document.querySelectorAll('.time-humidity')
 const hourWinds = document.querySelectorAll('.time-wind')
 
-let cityOrZip = 90011
+let cityOrZip
 let fahrenheitToCelsius = false
 
 getCurrentWeather()
